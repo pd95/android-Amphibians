@@ -19,8 +19,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import com.example.amphibians.MainActivity
+import com.example.amphibians.R
 import com.example.amphibians.databinding.FragmentAmphibianDetailBinding
 
 /**
@@ -41,5 +44,13 @@ class AmphibianDetailFragment : Fragment() {
 
         // Inflate the layout for this fragment
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val name = viewModel.amphibian.value?.name
+        val title = context?.resources?.getString(R.string.amphibian_detail_for, name)
+        (requireActivity() as AppCompatActivity).supportActionBar?.title = title
     }
 }

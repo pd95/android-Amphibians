@@ -16,4 +16,5 @@
 <resources>
     <string name="app_name">Amphibians</string>
     <string name="amphibian_detail">Detail Information</string>
+    <string name="amphibian_detail_for">Details for %1s</string>
 </resources>
